@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=400, maximum-scale=1">
+<title>Trump304 — UI Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+
+  .phone {
+    width: 390px; height: 844px; background: #1B5E20; border-radius: 40px; border: 4px solid #333;
+    overflow: hidden; position: relative; display: flex; flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .phone::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 150px; height: 30px; background: #111; border-radius: 0 0 20px 20px; z-index: 10; }
+
+  .screen { flex: 1; padding: 48px 24px 24px; display: none; flex-direction: column; overflow-y: auto; }
+  .screen.active { display: flex; }
+
+  /* Navigation tabs */
+  .nav { display: flex; gap: 4px; padding: 8px; background: rgba(0,0,0,0.2); position: absolute; bottom: 0; left: 0; right: 0; z-index: 5; }
+  .nav button { flex: 1; padding: 10px 4px; border: none; border-radius: 8px; font-size: 11px; font-weight: 600; cursor: pointer; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); transition: all 0.2s; }
+  .nav button.active { background: rgba(255,255,255,0.2); color: #FFD700; }
+  .nav button:hover { background: rgba(255,255,255,0.15); }
+
+  /* Common */
+  h1 { color: #FFD700; text-align: center; }
+  h2 { color: #fff; text-align: center; font-size: 16px; margin-bottom: 12px; }
+  .subtitle { color: rgba(255,255,255,0.5); text-align: center; font-size: 13px; margin-top: 4px; }
+
+  .btn { padding: 14px 24px; border: none; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.2s; }
+  .btn-primary { background: #4CAF50; color: white; }
+  .btn-primary:hover { background: #66BB6A; }
+  .btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.3); color: white; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.5); }
+  .btn-gold { background: #FFD700; color: #1B5E20; }
+
+  .input { width: 100%; padding: 14px 16px; border: 2px solid rgba(255,255,255,0.2); border-radius: 12px; background: rgba(255,255,255,0.1); color: white; font-size: 15px; outline: none; }
+  .input::placeholder { color: rgba(255,255,255,0.4); }
+  .input:focus { border-color: #4CAF50; }
+  .input-label { color: rgba(255,255,255,0.6); font-size: 12px; margin-bottom: 6px; }
+
+  .spacer { flex: 1; }
+  .gap-sm { height: 8px; }
+  .gap { height: 16px; }
+  .gap-lg { height: 24px; }
+  .gap-xl { height: 32px; }
+  .divider { height: 1px; background: rgba(255,255,255,0.15); margin: 8px 0; }
+
+  /* Chips */
+  .chip-row { display: flex; gap: 8px; justify-content: center; }
+  .chip { padding: 8px 20px; border-radius: 20px; border: 2px solid rgba(255,255,255,0.2); background: transparent; color: white; font-size: 14px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+  .chip.selected { background: #4CAF50; border-color: #4CAF50; }
+
+  /* ─── HOME SCREEN ─── */
+  .title-304 { font-size: 80px; color: #FFD700; text-align: center; font-weight: 900; letter-spacing: 4px; text-shadow: 0 4px 20px rgba(255,215,0,0.3); line-height: 1; }
+
+  /* ─── LOBBY SCREEN ─── */
+  .game-code { font-size: 48px; color: #FFD700; text-align: center; font-weight: 900; letter-spacing: 10px; }
+  .player-card { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
+  .player-card .seat { background: #FFD700; color: #1B5E20; border-radius: 6px; padding: 2px 8px; font-size: 11px; font-weight: 700; }
+  .player-card .name { color: white; font-size: 15px; }
+  .player-card.empty { opacity: 0.3; }
+  .player-card.empty .name { font-style: italic; }
+
+  /* ─── GAME SCREEN ─── */
+  .top-bar { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.6); }
+  .score-bar { display: flex; justify-content: space-around; padding: 6px 0; font-size: 12px; color: rgba(255,255,255,0.7); }
+  .score-bar .target { color: #FFD700; font-weight: 600; }
+
+  .timer-bar { width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; margin: 4px 0; }
+  .timer-fill { height: 100%; background: #4CAF50; border-radius: 2px; transition: width 0.3s; }
+  .timer-text { text-align: center; font-size: 11px; color: #4CAF50; }
+
+  /* Play area */
+  .play-area { flex: 1; display: flex; justify-content: center; align-items: center; min-height: 180px; position: relative; }
+  .play-area-label { color: rgba(255,255,255,0.2); font-size: 14px; }
+
+  .trick-cards { display: flex; gap: 8px; align-items: center; }
+  .trick-slot { text-align: center; }
+  .trick-slot .label { font-size: 10px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+
+  /* Cards */
+  .card {
+    width: 56px; height: 80px; border-radius: 8px; background: white;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 4px 6px; cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+    border: 2px solid #ddd; position: relative; user-select: none;
+  }
+  .card:hover { transform: translateY(-8px); }
+  .card.selected { transform: translateY(-14px); border-color: #FFD700; box-shadow: 0 4px 15px rgba(255,215,0,0.4); }
+  .card.dimmed { opacity: 0.4; }
+  .card .rank { font-size: 16px; font-weight: 800; line-height: 1; }
+  .card .suit-icon { font-size: 22px; text-align: center; }
+  .card .rank-sm { font-size: 10px; font-weight: 700; text-align: right; }
+  .card.red { color: #E53935; }
+  .card.black { color: #222; }
+
+  .card-back {
+    width: 56px; height: 80px; border-radius: 8px; background: #1565C0;
+    border: 2px solid #0D47A1; display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.3); font-weight: 800; font-size: 12px; flex-shrink: 0;
+  }
+
+  .hand { display: flex; gap: -12px; justify-content: center; padding: 8px 0 60px; overflow-x: auto; }
+  .hand .card { margin-left: -14px; }
+  .hand .card:first-child { margin-left: 0; }
+
+  /* Action buttons */
+  .actions { display: flex; gap: 8px; justify-content: center; padding: 8px 0; }
+  .actions .btn { width: auto; padding: 10px 20px; font-size: 13px; }
+
+  /* Bidding */
+  .bid-display { font-size: 48px; color: #FFD700; text-align: center; font-weight: 800; }
+  .bid-controls { display: flex; gap: 8px; justify-content: center; align-items: center; }
+  .bid-btn { width: 50px; height: 40px; border-radius: 8px; border: none; font-size: 14px; font-weight: 700; cursor: pointer; background: rgba(255,255,255,0.15); color: white; }
+
+  /* Trump selection */
+  .suit-chips { display: flex; gap: 8px; justify-content: center; }
+  .suit-chip { width: 52px; height: 52px; border-radius: 12px; border: 2px solid rgba(255,255,255,0.2); background: transparent; font-size: 28px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .suit-chip.selected { border-color: #FFD700; background: rgba(255,215,0,0.15); transform: scale(1.1); }
+  .suit-chip:hover { border-color: rgba(255,255,255,0.4); }
+
+  /* Score screen */
+  .score-row { display: flex; justify-content: space-between; padding: 12px 16px; background: rgba(255,255,255,0.08); border-radius: 10px; }
+  .score-row .name { color: white; }
+  .score-row .points { color: #FFD700; font-weight: 700; }
+  .result-badge { text-align: center; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-size: 14px; display: inline-block; }
+  .result-badge.win { background: rgba(76,175,80,0.2); color: #66BB6A; }
+  .result-badge.lose { background: rgba(229,57,53,0.15); color: #EF5350; }
+
+  /* Pulse animation for waiting */
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .pulsing { animation: pulse 1.5s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<div class="phone">
+
+  <!-- ═══ HOME SCREEN ═══ -->
+  <div class="screen active" id="screen-home">
+    <div class="spacer"></div>
+    <div class="title-304">304</div>
+    <p class="subtitle">Trump Card Game</p>
+    <div class="gap-xl"></div>
+
+    <div class="input-label">YOUR NAME</div>
+    <input class="input" placeholder="Enter your name" value="Bharath">
+    <div class="gap-lg"></div>
+
+    <div class="input-label">PLAYER MODE</div>
+    <div class="gap-sm"></div>
+    <div class="chip-row">
+      <button class="chip" onclick="selectMode(this)">2P</button>
+      <button class="chip" onclick="selectMode(this)">3P</button>
+      <button class="chip selected" onclick="selectMode(this)">4P</button>
+    </div>
+    <div class="gap"></div>
+    <button class="btn btn-primary" onclick="showScreen('screen-lobby')">Create Game</button>
+
+    <div class="gap-lg"></div>
+    <div class="divider"></div>
+    <div class="gap-lg"></div>
+
+    <div class="input-label">GAME CODE</div>
+    <input class="input" placeholder="Enter 6-digit code" value="" maxlength="6" style="letter-spacing:4px; text-transform:uppercase;">
+    <div class="gap"></div>
+    <button class="btn btn-outline" onclick="showScreen('screen-lobby')">Join Game</button>
+
+    <div class="spacer"></div>
+  </div>
+
+  <!-- ═══ LOBBY SCREEN ═══ -->
+  <div class="screen" id="screen-lobby">
+    <div class="gap"></div>
+    <div class="input-label" style="text-align:center">GAME CODE</div>
+    <div class="game-code">4UFCHJ</div>
+    <p class="subtitle">Share this code with friends!</p>
+    <div class="gap-xl"></div>
+
+    <h2>Players (3/4)</h2>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div class="player-card"><span class="seat">Seat 1</span><span class="name">Bharath</span></div>
+      <div class="player-card"><span class="seat">Seat 2</span><span class="name">Arun</span></div>
+      <div class="player-card"><span class="seat">Seat 3</span><span class="name">Kavitha</span></div>
+      <div class="player-card empty"><span class="seat">Seat 4</span><span class="name pulsing">Waiting...</span></div>
+    </div>
+
+    <div class="spacer"></div>
+    <div style="text-align:center;" class="pulsing">
+      <div style="width:32px;height:32px;border:3px solid #FFD700;border-top-color:transparent;border-radius:50%;margin:0 auto;animation:spin 1s linear infinite;"></div>
+      <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+      <div class="gap-sm"></div>
+      <span style="color:rgba(255,255,255,0.5);font-size:13px;">Waiting for players...</span>
+    </div>
+    <div class="gap-xl"></div>
+  </div>
+
+  <!-- ═══ BIDDING SCREEN ═══ -->
+  <div class="screen" id="screen-bidding">
+    <div class="top-bar">
+      <span>Game: 4UFCHJ</span>
+      <span>Dealer: Arun</span>
+    </div>
+    <div class="gap"></div>
+
+    <div class="spacer"></div>
+
+    <div style="text-align:center;">
+      <div style="color:rgba(255,255,255,0.5);font-size:12px;">Current bid</div>
+      <div style="color:white;font-size:18px;font-weight:600;">Arun bid 150</div>
+    </div>
+    <div class="gap-lg"></div>
+
+    <div style="text-align:center;color:rgba(255,255,255,0.6);font-size:13px;">Your bid</div>
+    <div class="bid-display" id="bid-val">170</div>
+    <div class="gap"></div>
+
+    <div class="bid-controls">
+      <button class="bid-btn" onclick="changeBid(-10)">-10</button>
+      <button class="bid-btn" onclick="changeBid(10)">+10</button>
+    </div>
+    <div class="gap"></div>
+
+    <div class="actions">
+      <button class="btn btn-gold" style="width:auto;padding:12px 32px;" onclick="showScreen('screen-trump')">Bid 170</button>
+      <button class="btn btn-outline" style="width:auto;padding:12px 32px;">Pass</button>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Hand -->
+    <div class="hand" id="bid-hand">
+    </div>
+  </div>
+
+  <!-- ═══ TRUMP SELECTION SCREEN ═══ -->
+  <div class="screen" id="screen-trump">
+    <div class="top-bar">
+      <span>Game: 4UFCHJ</span>
+      <span>You won the bid: 170</span>
+    </div>
+    <div class="gap-lg"></div>
+
+    <div class="spacer"></div>
+
+    <h2>Select Trump Suit</h2>
+    <div class="gap"></div>
+    <div class="suit-chips">
+      <button class="suit-chip" onclick="selectSuit(this)" data-suit="hearts">&#9829;</button>
+      <button class="suit-chip selected" onclick="selectSuit(this)" data-suit="diamonds">&#9830;</button>
+      <button class="suit-chip" onclick="selectSuit(this)" data-suit="clubs">&#9827;</button>
+      <button class="suit-chip" onclick="selectSuit(this)" data-suit="spades">&#9824;</button>
+    </div>
+    <div class="gap-lg"></div>
+
+    <div style="text-align:center;color:rgba(255,255,255,0.6);font-size:13px;">Select a diamond card to place face-down:</div>
+    <div class="gap"></div>
+    <div style="display:flex;gap:6px;justify-content:center;">
+      <div class="card red selected" style="width:52px;height:76px;">
+        <div class="rank">J</div><div class="suit-icon">&#9830;</div><div class="rank-sm">J</div>
+      </div>
+      <div class="card red" style="width:52px;height:76px;">
+        <div class="rank">9</div><div class="suit-icon">&#9830;</div><div class="rank-sm">9</div>
+      </div>
+    </div>
+    <div class="gap-lg"></div>
+    <button class="btn btn-gold" onclick="showScreen('screen-game')" style="max-width:200px;margin:0 auto;">Confirm Trump</button>
+
+    <div class="spacer"></div>
+
+    <div class="hand" id="trump-hand"></div>
+  </div>
+
+  <!-- ═══ GAME PLAY SCREEN ═══ -->
+  <div class="screen" id="screen-game">
+    <div class="top-bar">
+      <span>Game: 4UFCHJ</span>
+      <span>Trick 5</span>
+      <span style="color:#FFD700;">Trump: &#9830;</span>
+    </div>
+    <div class="score-bar">
+      <span>Trumper: 95 pts</span>
+      <span class="target">Target: 170</span>
+      <span>Opposing: 68 pts</span>
+    </div>
+
+    <div class="timer-text">18s</div>
+    <div class="timer-bar"><div class="timer-fill" style="width:60%;"></div></div>
+
+    <!-- Opponent names (top) -->
+    <div style="display:flex;justify-content:space-around;padding:8px 0;">
+      <div style="text-align:center;">
+        <div class="card-back" style="width:40px;height:56px;font-size:9px;margin:0 auto;">304</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;">Arun</div>
+      </div>
+      <div style="text-align:center;">
+        <div class="card-back" style="width:40px;height:56px;font-size:9px;margin:0 auto;">304</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;">Kavitha</div>
+      </div>
+      <div style="text-align:center;">
+        <div class="card-back" style="width:40px;height:56px;font-size:9px;margin:0 auto;">304</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;">Dinesh</div>
+      </div>
+    </div>
+
+    <!-- Trick area -->
+    <div class="play-area">
+      <div class="trick-cards">
+        <div class="trick-slot">
+          <div class="label">Arun</div>
+          <div class="card red" style="cursor:default;width:52px;height:74px;">
+            <div class="rank">K</div><div class="suit-icon">&#9829;</div><div class="rank-sm">K</div>
+          </div>
+        </div>
+        <div class="trick-slot">
+          <div class="label">Kavitha</div>
+          <div class="card red" style="cursor:default;width:52px;height:74px;">
+            <div class="rank">J</div><div class="suit-icon">&#9829;</div><div class="rank-sm">J</div>
+          </div>
+        </div>
+        <div class="trick-slot">
+          <div class="label">Dinesh</div>
+          <div class="card red" style="cursor:default;width:52px;height:74px;">
+            <div class="rank">7</div><div class="suit-icon">&#9829;</div><div class="rank-sm">7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;color:#FFD700;font-size:13px;font-weight:600;">Your turn — play a card!</div>
+    <div class="gap-sm"></div>
+
+    <div class="actions">
+      <button class="btn btn-primary" style="width:auto;" onclick="showScreen('screen-score')">Play Card</button>
+      <button class="btn btn-outline" style="width:auto;">Ask Trump</button>
+    </div>
+
+    <!-- Player hand -->
+    <div class="hand" id="game-hand"></div>
+  </div>
+
+  <!-- ═══ SCORE SCREEN ═══ -->
+  <div class="screen" id="screen-score">
+    <div class="gap-xl"></div>
+    <h1 style="font-size:32px;">Game Over!</h1>
+    <div class="gap"></div>
+
+    <div style="text-align:center;">
+      <span class="result-badge win">Trumper Wins!</span>
+    </div>
+    <div class="gap"></div>
+    <div style="text-align:center;color:rgba(255,255,255,0.6);font-size:13px;">
+      Trumper scored 182 / 170 target
+    </div>
+
+    <div class="gap-xl"></div>
+    <h2>Scores</h2>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div class="score-row"><span class="name">Bharath</span><span class="points">15 points</span></div>
+      <div class="score-row"><span class="name">Kavitha</span><span class="points">15 points</span></div>
+      <div class="score-row"><span class="name">Arun</span><span class="points">8 points</span></div>
+      <div class="score-row"><span class="name">Dinesh</span><span class="points">8 points</span></div>
+    </div>
+
+    <div class="gap"></div>
+    <div style="text-align:center;color:rgba(255,255,255,0.4);font-size:12px;">Bid: 170 &middot; Tier: 5 points &middot; Games played: 3</div>
+
+    <div class="spacer"></div>
+
+    <button class="btn btn-gold" onclick="showScreen('screen-home')">Next Game</button>
+    <div class="gap"></div>
+    <button class="btn btn-outline" onclick="showScreen('screen-home')">Leave</button>
+    <div class="gap-xl"></div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <button class="active" onclick="showScreen('screen-home')">Home</button>
+    <button onclick="showScreen('screen-lobby')">Lobby</button>
+    <button onclick="showScreen('screen-bidding')">Bidding</button>
+    <button onclick="showScreen('screen-trump')">Trump</button>
+    <button onclick="showScreen('screen-game')">Play</button>
+    <button onclick="showScreen('screen-score')">Score</button>
+  </div>
+</div>
+
+<script>
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  const labels = ['screen-home','screen-lobby','screen-bidding','screen-trump','screen-game','screen-score'];
+  const idx = labels.indexOf(id);
+  if (idx >= 0) document.querySelectorAll('.nav button')[idx].classList.add('active');
+}
+
+function selectMode(el) {
+  el.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function selectSuit(el) {
+  el.parentElement.querySelectorAll('.suit-chip').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+let bidVal = 170;
+function changeBid(delta) {
+  bidVal = Math.max(150, Math.min(304, bidVal + delta));
+  document.getElementById('bid-val').textContent = bidVal;
+}
+
+// Generate card HTML
+function makeCard(rank, suit, extra = '') {
+  const isRed = suit === '♥' || suit === '♦';
+  const cls = isRed ? 'red' : 'black';
+  return `<div class="card ${cls} ${extra}" onclick="this.classList.toggle('selected')">
+    <div class="rank">${rank}</div><div class="suit-icon">${suit}</div><div class="rank-sm">${rank}</div>
+  </div>`;
+}
+
+// Populate hands
+const bidHand = [['J','♠'],['9','♠'],['A','♥'],['10','♣'],['J','♦'],['9','♦'],['K','♥'],['8','♣']];
+document.getElementById('bid-hand').innerHTML = bidHand.map(([r,s]) => makeCard(r,s)).join('');
+
+const trumpHand = [['J','♠'],['9','♠'],['A','♥'],['10','♣'],['J','♦'],['9','♦'],['K','♥'],['8','♣']];
+document.getElementById('trump-hand').innerHTML = trumpHand.map(([r,s]) => makeCard(r,s)).join('');
+
+const gameHand = [['9','♥'],['A','♠'],['10','♣'],['Q','♦'],['7','♠']];
+const gameValid = ['9','A'];
+document.getElementById('game-hand').innerHTML = gameHand.map(([r,s], i) => {
+  const dim = (s === '♥' && ['9'].includes(r)) ? '' : 'dimmed';
+  return makeCard(r, s, i === 0 ? 'selected' : dim);
+}).join('');
+</script>
+
+</body>
+</html>

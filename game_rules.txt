@@ -1,296 +1,289 @@
-  1.0 Introduction
+1.0 Introduction
 ----------------
 
-304 (Pronounced 'three nought four') is a card game popular in Sri
-Lanka.  card304 is an electronic version of the same game and may be
-played over the internet by four players.  To install card304,
-please refer to the download and installation instructions below.
+304 (Pronounced 'three-oh-four') is a card game popular in Sri Lanka.
+Trump304 is an electronic version of the same game, playable online
+by 2, 3, or 4 players.
 
 
 2.0 Basic Rules of 304
 ----------------------
 
-It can be the followin number of players
-2 or 3 or 4 players
-In case of 4 players, 2 alternate players become a team
+The game supports 2, 3, or 4 players:
+- 2 players: Head-to-head, no teams.
+- 3 players: Once the trumper is decided, the other two form a team
+  against the trumper.
+- 4 players: Players seated opposite each other (alternating seats)
+  form a team of 2.
 
 
 2.1 Card Value and Precedence
 -----------------------------
 
-304 uses a standard deck of cards excluding the jokers and cards 2
-through 6 in all suites.  So the 304 playing deck consists of 32
-cards, 7 through A in all suites.  Each card in a suite has a defined
-value (or points) as given below.
-	J - 30
-	9 - 20
-	A - 11
-	10 - 10
-	K - 3
-	Q - 2
-	8 - 0
-	7 - 0
+304 uses a standard deck excluding jokers and cards 2 through 6 in
+all suits. The playing deck consists of 32 cards (7 through Ace in
+all four suits). Each card has a point value:
 
-As can be seen from the table, the order of value of the cards is not
-intuitive to newcomers to the game, and it would be useful to get used
-to the above order as soon as possible.
+    J  - 30
+    9  - 20
+    A  - 11
+    10 - 10
+    K  - 3
+    Q  - 2
+    8  - 0
+    7  - 0
 
-During game play, when someone plays a card, it can be beaten only by
-a card in the same suite with more points (or by a trump card, see below).
+Note: The card hierarchy follows point value, NOT the usual rank
+order. For example, J beats 9, which beats A, which beats 10.
 
-The object of the game is to accumulate a target number of points
-*within a team*, i.e. between your partner and yourself. 
+During play, a card can only be beaten by a card of the same suit
+with higher points — or by a trump card (see Section 2.4).
 
-A quick calculation will reveal that the total number of points in the
-32 card playing deck is 304
+The total points across all 32 cards is 304, giving the game its name.
+
+The objective is to accumulate enough points (through winning tricks)
+to meet or exceed the bid target.
+
 
 2.2 Dealing
 -----------
 
-The game begins with the dealer shuffling and dealing out the cards.
-- The cards are dealt _four at a time_ to each player
-- They are dealt in a  clockwise direction, starting with the
-  first player to the dealer's left. 
-- Dealer is player and dealer turn changes after every game in clockwise
+The game begins with the dealer shuffling and dealing the cards.
+Before dealing, the player to the dealer's left may cut the deck.
 
-Before the cards are dealt and after they are shuffled, the first
-player to the dealer's left, may cut the deck if s/he so chooses.
+General rules:
+- Cards are always dealt clockwise, starting with the player to the
+  dealer's left.
+- The dealer role rotates clockwise after each game.
+- The dealer is also a player.
 
+Dealing by player count:
 
-cards are dealt starting to the left of the dealer, and proceed clockwise
+  2 players:
+  - 10 cards each, dealt in 3 rounds: 4, 4, then 2 cards.
+  - The remaining 12 cards are placed face-down in the center as a
+    draw pile.
 
+  3 players:
+  - 10 cards each, dealt in 3 rounds: 4, 4, then 2 cards.
+  - The remaining 2 cards are placed face-down in the center.
 
-In 2 and 3 player - 10 cards are dealt to each player in 3 rounds of 4,4,2 cards and the remaining cards are face down at the center
-In 4 player game - all 32 cards are dealt - 8 cards each to every player in two rounds of dealing 4 cards each. there is no center pile of cards in 4 players
-
-
-In 3 player - cards are dealt starting to the right of the dealer. Round 1 4 cards, round 2 4 cards and final round 2 cards. The remainig 2 cards are face down at the centrer
-
-In 4 player - the cards are dealt starting to right of the dealer and goes right
+  4 players:
+  - All 32 cards are dealt — 8 cards per player in 2 rounds of 4.
+  - There is no center pile.
 
 
 2.3 Bidding
 -----------
 
-2.3.1 Four card bid
--------------------
+After all cards are dealt, the bidding phase begins. Starting with
+the player to the dealer's left and proceeding clockwise, each player
+may place a bid.
 
-When the dealer has dealt all the cards the bidding
-process starts.  
+A bid is the number of points the player believes their team (or
+themselves in 2/3-player) can win, assuming they get to choose the
+trump suit. The highest bidder becomes the "trumper" and chooses the
+trump suit.
 
-Starting with the first player to the dealer's left, each
-player can place a bid, as to how many points he expects his team to
-get, were he allowed to choose the trump.
+Bidding rules:
+- Bids must be in multiples of 10.
+- Minimum bid is 150 (more than half of 304).
+- Each player may bid only once (with exceptions below).
+- A player may pass instead of bidding. A pass still counts as that
+  player's one bid.
+- A player may NOT overbid their own partner, unless an opponent has
+  already overbid that partner.
+- If no one bids, the dealer is forced to bid the minimum (150).
 
+Special bids (200 and above):
+- If no bid of 200+ has been placed yet, a player making a bid of
+  200+ is allowed to:
+  (a) Overbid their own partner.
+  (b) Make a second bid (if they already bid or passed once).
+- Even with a 200+ bid, you may NOT overbid yourself unless someone
+  else has overbid you first.
 
-The person with the highest bid is
-allowed to choose the suite that would be the trump for that game.
-This person will be referred to as 'the trumper' in this doc.  A
-'bid' is your estimate of the number of points you or your team
-will get, assuming you get to choose the trumps.  If at the end of the
-game you meet or exceed the trumper/trumper team wins. IF not the other team wins. One uniqueness is - in 3 player game once the trumper is decided, the other two forma team trying to beat the trumper
+Scoring table (tokens won/lost per game):
 
+  Bid Range     | Trumper Wins  | Trumper Loses
+  ------------- | ------------- | ------------------------------------------
+  150 - 190     | 5 tokens      | Opposing team gets 3 tokens
+  200 - 300     | 6 tokens      | Opposing team gets 5 tokens
+  304           | 10 tokens     | Opposing team gets 7 tokens
 
-The rules of bidding with four cards are as follows
-- bids must be in multiples of 10 points
-- bids must be higher than half the total number of points; so the
-  minimum bid is 150
-- you may bid only once
-- you may not overbid your partner, unless someone else has overbid
-  your partner before you
-- 200 and above are considered special bids and have higher
-  risk/reward.  If noone has yet bid 200 or higher, and your next bid
-  is going to be 200 or higher, you are allowed to break the previous
-  two rules, namely you may in this case overbid your partner, and/or
-  make a second bid.  
-- even when bidding over 200, you may not overbid yourself, unless
-  someone else has overbid you first.
-- You may pass and not make a bid when it is your turn.  However, this
-  will still count as one "bid" as far as the above rules are concerned.
-- bidding typically goes in a  clockwise direction starting
-  with the person to the immediate left of the dealer.  
-- if no one submits a bid, the dealer is forced to bid a minimum which is 150
+  In a 3-player game, when the trumper loses, EACH of the two
+  opposing players receives the listed token amount individually.
 
-The number of points won by the trumper/opponent team is as follows
-
-Bid		         Trumper wins		          Trumper loses
-150 - 190	      Trumper gets 5 points		opposing team wins 3 points. only in case of 3 player game the opposing team mebers each get 3 points
-200 - 300       Trumper gets 6 points   Opposing team wins 5 points. only in case of 3 player game the opposing team mebers each get 5 points
-304         Trumper gets 10 points      Opposing team wins 7 points. only in case of 3 player game the opposing team mebers each get 7 points
+Overall match: Players play unlimited games, tracking cumulative
+token scores. Players can stop at any time.
 
 
-======
 2.4 The Trump
 -------------
 
-The trump is a suite chosen by the player who had the highest bid.  A
-card in the trump suite will beat any card in any other suite, however
-the trump may be played only if the player does not have any cards in
-the calling suite.  When a trump is played to beat a card in a
-different suite, that action is called 'cutting' (similar to ruffing
-in Bridge).  If two players attempt to cut a given card, the player
-who used the higher valued trump card wins.
+The trump is a suit chosen by the trumper (highest bidder). A card
+in the trump suit beats any card in any other suit.
 
-The trump should be chosen and placed face down - before starting to play 
-This closed card will be referred to as 'The Trump Card' in this
-document.
+Trump selection process:
+1. The trumper selects a trump suit and places one card from that
+   suit face-down on the table. This card is called "The Trump Card."
+2. The trumper must NOT announce the trump suit to other players.
+3. The Trump Card cannot be used during normal play (it is set aside).
 
-*The trumper should not announce the trump to the other players.*
+3-player card exchange (only in 3-player games):
+- After placing The Trump Card, the trumper may optionally exchange
+  cards with the center pile: place exactly 2 cards face-down and
+  pick up the 2 center cards. This is all-or-nothing (no partial
+  exchange).
+- The 2 cards placed down by the trumper count toward the opposing
+  team's points at the end of the game.
 
-Once The Trump Card has been placed face down on the table,
+2-player games:
+- The trumper places The Trump Card face-down. No card exchange
+  occurs. The center pile is used only as a draw pile after tricks.
 
-Only In 3 player game: the trumper will have an option to place two additional cards face down and take the two face down cards that are remaining.Trumper can eitehr place two cards and get the two cards or not. there is no option of just placing one card down and picking one. the two face down cards will belong to the opponent while final counting of points. 
-
- 
-The Trump Card may not be used during normal game play.  The circumstances in which it may be played
-are described below.
 
 2.5 Game Play
 -------------
 
-The player to the immediate left  of the dealer starts the game play. only incase of a 304 bid, the trumper gets to start. 
-Once he has played a card, play proceeds in a  clockwise
-direction.  The next player has to play a card in the same suite as
-the first card (this suite is referred to as the calling suite).
-Whoever has the highest card in the calling suite after all 
-players have played, wins all the cards that were played.  These 
-cards are collectively known as a 'trick'. These cards may not be used
-again in the game, and should be kept separate from the players hand.
-In general, these cards may not be looked at until the end of the
-game.  However, a player is allowed to refer to the four cards in the
-last trick that was played out.   
+The player to the dealer's left leads the first trick.
+Exception: If the bid was exactly 304, the trumper leads first.
 
-The player who won the current trick plays the first card for 
-the next trick. 
+Play proceeds clockwise. Each subsequent player must follow suit
+(play a card of the same suit as the lead card — the "calling suit").
+The player with the highest-value card in the calling suit wins the
+trick, UNLESS the trick is cut with a trump (see Section 2.5.1).
 
-*It is important to note that the number of tricks won is
-irrelevant.  What matters is the _number of points_ in the cards
-that are in the tricks won*.
+The trick winner collects the played cards (the "trick") and sets
+them aside. Tricks cannot be looked at again, except for the most
+recently completed trick.
 
-The objective of the team that kept the trump is to get enough
-points to deliver on their bid, while the objective of the other team
-is to get enough points to prevent the other team from delivering on
-their bid.
+The trick winner leads the next trick.
 
-Only in  two player : after every trick both players have to pick one card each from the common remaining pool with the winner of the trick starting first until the cards in the center pile run out. 
+Important: The number of tricks won is irrelevant. Only the total
+POINTS in the cards within won tricks matter.
+
+2-player draw rule:
+- After each trick, both players draw one card from the center pile.
+  The trick winner draws first. This continues until the center pile
+  is exhausted.
+
 
 2.5.1 Cutting
 -------------
 
-When a certain card is played on the table if the next player does
-not have a card of the same suite, he has two options
-- he may attempt to cut
-- he may play some other card which is neither the calling suite nor a
-  trump
+If a player has no cards in the calling suit, they have two options:
 
-Unless this player is the trumper, he would not know what the trump
-is.  So he has two options : 1. ask the trump what the trump suite is (If the trump suite is unrevelaed until that point) and the trumper has to reveal the trump card to everyone. the caller then - if he has the trump suite, will  play it and cut the trick. The trick belongs to the cutter unless someone subsequently puts a higher valued card int he trump suite. it the trump suite is already revealed the player can choose to directly put the trump suite to cut and own the trick
-2. play a card from other suite. even if the suite is acccidentally the trump suite (trump suie is unrevealed so the player does not know), it has no effect. The trick will belong to highest card player.
+Option A — Attempt to cut (play a trump):
+  - If the trump suit has NOT yet been revealed:
+    * A non-trumper player must ASK the trumper to reveal the trump.
+      The trumper then flips The Trump Card face-up for all to see.
+    * After seeing the trump suit, the player plays a trump card to
+      cut — if they have one. If they don't have any trump cards,
+      they play any other card instead.
+  - If the trump suit has already been revealed:
+    * The player may directly play a trump card to cut.
+  - A cut wins the trick unless a subsequent player plays a higher
+    trump card.
 
-IF the player chooses option one but odoes  not have the trump suite cards, then can play any other suite.
+Option B — Discard (play an off-suit card):
+  - The player plays a card from a suit that is neither the calling
+    suit nor the trump suit. This card cannot win the trick.
+  - Important: If the trump is still hidden and the player
+    accidentally plays a card that happens to be in the trump suit
+    (without knowing), it does NOT count as a cut. The trick still
+    belongs to the highest card in the calling suit.
 
+When the trumper wants to cut:
+  - The trumper must reveal the trump suit BEFORE playing a trump
+    card. If the trumper plays a trump card without first revealing,
+    it is NOT considered a cut.
+  - If the trumper chooses not to cut, they may discard a card from
+    any non-calling suit.
 
- The rest of the players then play their cards.  
-
-If the trumper does not have a card in the calling suite and he chooses
-to cut, he has to reveal the trump before cutting. if accidentally plays a trump suite card without actually revealing the trump first, it will not be considered a cut. 
-
-If he chooses not to cut, the trumper may play a card of any other suite. 
-
-Once the trump is revealed that card goes back into the hand of the trumper or if it is played into the trick pile. 
-
-The trumper can reveal the trump only while someone asks to cut a trick or if the trumper himself reveals before a cut. if the game proceeds till the last rcard without the trump being revelaed, the trumper will pick and reveal the card on the last trick. 
+Trump Card return:
+  - Once the trump is revealed, The Trump Card is returned to the
+    trumper's hand and can be played normally in future tricks.
+  - If the trump is never revealed during the game, the trumper must
+    reveal it on the final (last) trick.
 
 
 2.5.2 Special Rules for Playing Trumps
 --------------------------------------
 
-Once the trump is revealed, if a player plays the trump suite the trick belongs to the player with the highest trump suite card in the trick. 
+Once the trump suit is revealed and publicly known:
+- If a player leads with a trump-suit card, all other players must
+  follow suit with trump cards (if they have any).
+- The trick is won by the highest-value trump card played.
+- Trump cards can still only be played as a cut if the player has no
+  cards in the calling suit.
+
+Spoilt Trumps:
+- If all 8 cards of the trump suit end up entirely within the
+  trumper's team (or in the trumper's hand alone in 2/3-player), the
+  game is declared void ("spoilt trump game"). No one wins or loses
+  tokens for that game.
 
 
-
-Once
-everyone has seen the Trump Card, it is returned to the trumper's hand
-and is no longer considered The Trump Card.
-
-- Spoilt Trumps: Once all eight cards have been picked up by the
-players and play commences, it may turn out that all eight trumps were
-split between the trumper and his partner or by the trumper himself.  In effect, the opposing
-team never had any trumps in this game.  Such a game is called a
-'spoilt game' or 'spoilt trump game'.  It is declared invalid, and no
-one wins
-
-
-3.0 Deciding the result of a game
+3.0 Deciding the Result of a Game
 ---------------------------------
 
-Once all eight tricks are played out, the total points of all the
-cards won by the trumper's team are calculated.  If this is found to
-be equal to or higher than the bid amount, the trumper's team is
-declared the winner and wins the points. If not, the other team is the
-winner and wins the points
+After all tricks are played, the total points of cards won by the
+trumper's team are calculated:
+- If the total meets or exceeds the bid amount → trumper's team wins.
+- If the total is below the bid amount → opposing team wins.
 
+The margin of victory/defeat is irrelevant. Token awards are based
+solely on the scoring table in Section 2.3, determined by the bid
+range.
 
-
-
-
-. In either case, the margin by which the
-bid is exceeded or missed is of no relevance and points are
-calculated based only on the table above. The 
-winning team is paid its winnings by the losing team.  
+The losing team pays the token amount to the winning team.
 
 
 4.0 Comprehensive Rules
 -----------------------
 
-The following are rules and special situations, not strictly
-observed or encountered by beginners but still very much a part of the game.
+The following are additional rules and special situations.
 
-4.1 time
+4.1 Communication
 -----------------
 
-No verbal, signed or any such communication is allowed between
-players during a game, other than what is possible by the playing of
-the cards and stating of bids.  At the conclusion of a game and
-before the cards are dealt for the next game, communication is allowed.
+No verbal, signed, or any other form of communication is allowed
+between players during a game, other than what is inherent in playing
+cards and stating bids. Communication is allowed only between games.
 
 
 4.2 Rule Violations
 -------------------
 
-Violation of any of the rules results in the opposing team being
-awarded the current game with its winnings plus two more tokens.  This
-includes incorrectly calling spoilt games, or otherwise inadvertantly
-breaking the rules.
+Violation of any rule results in the opposing team being awarded the
+current game PLUS 2 additional bonus tokens. This includes:
+- Incorrectly calling a spoilt game.
+- Any inadvertent rule-breaking.
 
 
-
-
-
-4.4 Shuffling Rules
+4.3 Shuffling Rules
 -------------------
 
-A frequent complaint of beginners to 304 is that there seems to be
-some blatant manipulation of cards during shuffling.  The rules
-governing shuffling are:
-- the dealer may not look at the face of any of the cards while
-  shuffling or dealing
-- the dealer may not arrange cards in a certain way before the shuffle
-- the dealer may not count out cards or attempt to move cards on an
-  individual basis during the shuffle 
-- the deck should not be split between shuffles -- after each shuffle,
-  the deck must be a homogenous whole
-- the shuffling and dealing must be done in such a way that it is
-  clearly visible to all the players
+Rules governing shuffling:
+- The dealer may not look at the face of any card while shuffling or
+  dealing.
+- The dealer may not arrange cards in a specific order before
+  shuffling.
+- The dealer may not count or move cards individually during the
+  shuffle.
+- The deck must remain as one whole unit between shuffles (no
+  splitting into separate piles).
+- Shuffling and dealing must be clearly visible to all players.
 
-What is not required is that the cards be shuffled thoroughly.  Thus
-an attempt is sometimes made to shuffle the cards minimally, or in
-whatever way that is perceived to give the dealer an advantage.  It is
-fair to say, that any advantage that may be achieved by this can
-easily be nullified by intelligently cutting the deck before it is
-dealt. All the rules of shuffling apply to cutting as well.
+Note: Thorough shuffling is not required. Minimal shuffling is a
+legitimate tactic, but can be countered by the cutting player making
+a strategic cut. All shuffling rules also apply to cutting.
 
 
-System rules for online game
-Every player gets 30 seonds per turn. if the tie runs out, a random valid card is played automatically by the system
+5.0 System Rules for Online Play
+---------------------------------
 
+- Every player gets 30 seconds per turn. If the timer runs out, the
+  system automatically plays a random valid card on behalf of the
+  player.
