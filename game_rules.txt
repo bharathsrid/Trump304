@@ -109,14 +109,14 @@ The rules of bidding with four cards are as follows
   will still count as one "bid" as far as the above rules are concerned.
 - bidding typically goes in a  clockwise direction starting
   with the person to the immediate left of the dealer.  
-- if noone submits a bid, the dealer is forced to bid a minimum which is 150
+- if no one submits a bid, the dealer is forced to bid a minimum which is 150
 
 The number of points won by the trumper/opponent team is as follows
 
 Bid		         Trumper wins		          Trumper loses
 150 - 190	      Trumper gets 5 points		opposing team wins 3 points. only in case of 3 player game the opposing team mebers each get 3 points
 200 - 300       Trumper gets 6 points   Opposing team wins 5 points. only in case of 3 player game the opposing team mebers each get 5 points
-card304         Trumper gets 10 points  Opposing team wins 7 points. only in case of 3 player game the opposing team mebers each get 7 points
+304         Trumper gets 10 points      Opposing team wins 7 points. only in case of 3 player game the opposing team mebers each get 7 points
 
 
 ======
@@ -131,31 +131,29 @@ different suite, that action is called 'cutting' (similar to ruffing
 in Bridge).  If two players attempt to cut a given card, the player
 who used the higher valued trump card wins.
 
-The trump should be chosen from the first four cards that are dealt to
-the player with the highest bid.  He may not look at the rest of his
-cards, until he has chosen the trump.  He has to choose his trump from
-the suites he has available in the four cards in his hand.  Once he
-has decided on the trump suite, he has to pick a card in that suite
-from the four cards in his hand, and place that card face down on the
-table.  This closed card will be referred to as 'The Trump Card' in this
+The trump should be chosen and placed face down - before starting to play 
+This closed card will be referred to as 'The Trump Card' in this
 document.
 
 *The trumper should not announce the trump to the other players.*
 
-Once The Trump Card has been placed face down on the table, the trumper
-may pick up his remaining four cards.  The Trump Card may not be used
-during normal game play.  The circumstances in which it may be played
+Once The Trump Card has been placed face down on the table,
+
+Only In 3 player game: the trumper will have an option to place two additional cards face down and take the two face down cards that are remaining.Trumper can eitehr place two cards and get the two cards or not. there is no option of just placing one card down and picking one. the two face down cards will belong to the opponent while final counting of points. 
+
+ 
+The Trump Card may not be used during normal game play.  The circumstances in which it may be played
 are described below.
 
 2.5 Game Play
 -------------
 
-The player to the immediate right of the dealer starts the game
-play.  Once he has played a card, play proceeds in a counter clockwise
+The player to the immediate left  of the dealer starts the game play. only incase of a 304 bid, the trumper gets to start. 
+Once he has played a card, play proceeds in a  clockwise
 direction.  The next player has to play a card in the same suite as
 the first card (this suite is referred to as the calling suite).
-Whoever has the highest card in the calling suite after all four
-players have played, wins all the cards that were played.  These four
+Whoever has the highest card in the calling suite after all 
+players have played, wins all the cards that were played.  These 
 cards are collectively known as a 'trick'. These cards may not be used
 again in the game, and should be kept separate from the players hand.
 In general, these cards may not be looked at until the end of the
@@ -174,6 +172,8 @@ points to deliver on their bid, while the objective of the other team
 is to get enough points to prevent the other team from delivering on
 their bid.
 
+Only in  two player : after every trick both players have to pick one card each from the common remaining pool with the winner of the trick starting first until the cards in the center pile run out. 
+
 2.5.1 Cutting
 -------------
 
@@ -184,157 +184,41 @@ not have a card of the same suite, he has two options
   trump
 
 Unless this player is the trumper, he would not know what the trump
-is.  So he has to *guess* what the trump might be. Once he has made a
-guess, he has to pick a card from his hand which belongs to the
-guessed trump suite and play it _face down_ on the table.  
+is.  So he has two options : 1. ask the trump what the trump suite is (If the trump suite is unrevelaed until that point) and the trumper has to reveal the trump card to everyone. the caller then - if he has the trump suite, will  play it and cut the trick. The trick belongs to the cutter unless someone subsequently puts a higher valued card int he trump suite. it the trump suite is already revealed the player can choose to directly put the trump suite to cut and own the trick
+2. play a card from other suite. even if the suite is acccidentally the trump suite (trump suie is unrevealed so the player does not know), it has no effect. The trick will belong to highest card player.
 
-If he chooses the second option and decides to play some other card,
-he still has to play it face down.  When a card is played face down,
-it tells the other players, that an attempt is being made to either
-cut the current trick or to play another suite.  The rest of the
-players then play their cards.  
+IF the player chooses option one but odoes  not have the trump suite cards, then can play any other suite.
+
+
+ The rest of the players then play their cards.  
 
 If the trumper does not have a card in the calling suite and he chooses
-to cut, he has to cut with The Trump Card if it is currently unplayed.
-He may not cut using any other card from the trump suite, while The Trump 
-Card is still unplayed.  If he chooses not to cut, the trumper may
-play a card face down.  This card may not be a trump.
+to cut, he has to reveal the trump before cutting. if accidentally plays a trump suite card without actually revealing the trump first, it will not be considered a cut. 
 
-Viz. If the trumper plays a card face down from his hand, then it
-means he is definitely not cutting.  If on the other hand he plays The
-Trump Card face down, then his is definitely cutting.  
+If he chooses not to cut, the trumper may play a card of any other suite. 
 
-After all four players have played for the current trick, the trumper,
-will examine the cards that were played face down without disclosing
-those cards to any of the other players. 
+Once the trump is revealed that card goes back into the hand of the trumper or if it is played into the trick pile. 
 
-Upon examining the card(s) played face down, the trumper will announce
-whether any of the face down cards are of the trump suite or not. If
-any of them are of the trump suite, the cut was successful. The face
-down card that successfully cut the trick is turned face up and shown
-to all the players.  Any other card that was played face down in that
-trick, with the exception of a card that may have been played face
-down by the trumper himself, should also be turned face up at this
-point. In addition, The Trump Card should also be turned face up,
-irrespective of whether it was played or not.
+The trumper can reveal the trump only while someone asks to cut a trick or if the trumper himself reveals before a cut. if the game proceeds till the last rcard without the trump being revelaed, the trumper will pick and reveal the card on the last trick. 
 
-If The Trump Card was not played in the trick where a successful cut
-was executed, it should now be picked up by the trumper and returned
-to his hand.  It is no longer considered The Trump Card, and the
-special rules regarding The Trump Card no longer apply to it.
-
-In the event of multiple players guessing the trump correctly, the
-player playing the highest valued trump wins the trick.
-
-In the event of none of the players guessing the trump correctly, the
-trumper will announce that noone succeeded.  All cards played face
-down will remain face down.  These cards may not be looked at by a
-player choosing to refer to the last trick.
-
-Once a successful cut has been made by any player, the trump suite is
-known to all players.  At this point the trump is said to be
-'open'. Once the trump is open, cards should not be played face down
-in any circumstances (i.e. all cards should be played face up).
 
 2.5.2 Special Rules for Playing Trumps
 --------------------------------------
 
-- Playing The Trump Card:  the trumper may play the trump card if and
-only if he is cutting.  Even in the case where the calling suite is
-the trump suite, and the trumper has no further cards left in his hand
-in the trump suite, he may not play The Trump Card.  (In this case he
-would have to play a card of a different suite face down).  The only
-time the trumper is allowed to play the Trump Card in a situation in
-which he is not cutting, is when he no longer has *any* cards left in
-his hand, and the current trick is essentially the last trick of the
-game. 
+Once the trump is revealed, if a player plays the trump suite the trick belongs to the player with the highest trump suite card in the trick. 
 
-- Open Trump game: Upon receiving all eight cards and before the first
-card has been played, the trumper may decide to play an open trump
-game.  This is a game in which the trump is known to all the players.
-Before the first card is played, the trumper should announce he is
-playing an open trump game and turn The Trump Card face up.  Once
+
+
+Once
 everyone has seen the Trump Card, it is returned to the trumper's hand
 and is no longer considered The Trump Card.
 
-Tactical Note: There are certain situations when an open trump game is
-desirable, for example if the game strategy requires your partner to
-cut the first trick. However, in general a closed trump game is more
-advantageous to the trumper.
-
-- Playing trumps in the first trick: If the trumper happens to be the
-player to the immediate right of the dealer, then he has to play the
-first card to begin the game.  In a closed trump game, the trumper may
-not play trumps in this situation.  If he wishes to begin the game
-playing trumps, he has to play an open trump game.
-
-Viz. in such a situation in a closed trump game, the possible trump
-suites are narrowed down from four to three, for the other players
-trying to guess the trump. 
-
-- Playing Exhausted Trumps: A situation in which the trumper has
-all the remaining trumps in the game is called Exhausted Trumps. If
-the trumper is playing first in a trick, and he begins the trick by
-playing trumps when they are exhausted, none of the other players
-will be able to respond with trumps. If this occurs the trumper has to
-keep playing trumps until he himself has no further trumps in his
-hand. Thus it is very important for the trumper to keep track of the
-number of trumps outside his control.
-
 - Spoilt Trumps: Once all eight cards have been picked up by the
 players and play commences, it may turn out that all eight trumps were
-split between the trumper and his partner.  In effect, the opposing
+split between the trumper and his partner or by the trumper himself.  In effect, the opposing
 team never had any trumps in this game.  Such a game is called a
 'spoilt game' or 'spoilt trump game'.  It is declared invalid, and no
-payout is made.  All the cards are collected by the dealer and the
-game is restarted.  It is up to the team opposing the trumper to call
-a spoilt trump game.  If they are unable to spot a spoilt trump game,
-the trumper's team may either call a spoilt trump game or continue to
-play and collect their winnings at the end.  A spoilt trump game has
-to be called before the last card in the last trick is played.
-
-
-2.6 Eight Card Bid
-------------------
-
-Once everyone has seen all eight cards dealt to them, but before the
-first card in the first trick is played, another round of bidding is
-allowed.  The trumper is given the first chance at an eight card bid,
-and bidding progresses in a counter clockwise direction from there.
-
-The rules for an eight card bid are as follows
-- the minimum bid is either 250 or the current four card bid amount,
-  whichever is _higher_
-- you may not overbid your partner
-- you may not bid more than once
-- any bids made during the four card bid phase have no bearing once
-  an eight card bid has been made; whoever was the trumper based on
-  the four card bid is no longer the trumper and he has to return The
-  Trump Card to his hand.  A new Trump Card will be chosen by the
-  winner of the eight card bid
-
-If no eight card bids are made, the game proceeds as described above
-with the result of the four card bid.  If an eight card bid is made,
-the new highest bidder becomes the trumper.  He can choose The Trump
-Card from the eight cards in his hand.  The payout is similar to the
-payout for four card bids.
-
-A note on reasonable bidding: the average trick is worth 38 points.
-This means to deliver a bid of 250, you need to be confident of
-winning at least seven of the eight tricks in a game.
-
-2.6.1. Special Rules for bids of 250 or higher
-----------------------------------------------
-
-For games with a bid of 250 or higher, certain special rules apply.
-If the trumper chooses to play a closed trump game, only the first
-trick is played as a closed trump game.  At the end of the first
-trick, the Trump Card is turned face up and shown to all the players.
-It is then returned to the trumper's hand and no longer considered the
-Trump Card.  
-
-Viz. in a closed trump game with a bid of 250 or higher, the trumps
-are unknown only for the first trick.
+one wins
 
 
 3.0 Deciding the result of a game
@@ -343,19 +227,17 @@ are unknown only for the first trick.
 Once all eight tricks are played out, the total points of all the
 cards won by the trumper's team are calculated.  If this is found to
 be equal to or higher than the bid amount, the trumper's team is
-declared the winner and wins the payoff. If not, the other team is the
-winner and wins the charge. In either case, the margin by which the
-bid is exceeded or missed is of no relevance and winnings are
-calculated based only on the payoff/charge table above. The 
+declared the winner and wins the points. If not, the other team is the
+winner and wins the points
+
+
+
+
+
+. In either case, the margin by which the
+bid is exceeded or missed is of no relevance and points are
+calculated based only on the table above. The 
 winning team is paid its winnings by the losing team.  
-
-It is customary to start the game with 11 tokens per team.  The object
-of the game is to win all your opposing team's tokens.
-
-In other versions of 304 the losing team pays out its losses to a
-neutral 'bank', and no winnings are collected.  The first team to lose
-all its tokens loses the set.  This is increasingly popular, because
-it finishes a set of games sooner than the traditional rules do.
 
 
 4.0 Comprehensive Rules
@@ -364,7 +246,7 @@ it finishes a set of games sooner than the traditional rules do.
 The following are rules and special situations, not strictly
 observed or encountered by beginners but still very much a part of the game.
 
-4.1 Communication
+4.1 time
 -----------------
 
 No verbal, signed or any such communication is allowed between
@@ -382,102 +264,7 @@ includes incorrectly calling spoilt games, or otherwise inadvertantly
 breaking the rules.
 
 
-4.3 Caps
---------
 
-Winning all eight tricks in the game is called Caps, similar to a Slam
-in Bridge.  (This is the only situation where tricks and not the
-number of points matters in 304).  Even if the winning team wins all
-304 points but loses a trick, it is not considered Caps.
-
-If a team executes Caps in a game, it is awarded the winnings based on
-the bid, plus one more token.  However, to execute Caps in a game, it
-is not sufficient to win all eight tricks.  In addition to this,
-
-*The winning team must call Caps as soon as it is evident to any one
-player in the team that they can win all tricks in the current game, 
-
-and 
-
-that player states the exact order in which the rest of his/her cards
-should be played to execute Caps
-
-and
-
-Caps is called before the first card in the seventh trick is
-played.*
-
-
-- when calling Caps one is not allowed to assume any intelligence on
-the part of any of the other players, including one's partner.  So to
-call Caps, the player must rely on his play and only that the other
-players will follow the rules.
-
-Viz. it is possible that assuming some intelligence in your partner's
-play, at some point it becomes evident to you that you are going to
-win all the tricks in the current game, but you cannot do it on your
-own. This is not sufficient grounds to call Caps. 
-
-Viz2. it is possible that based on your play alone, at some point it
-is evident to you that you will win all the tricks in the current
-game, but you are still not sure of the exact order in which you have
-to play your cards, since that depends on some other player's
-response.  This is not sufficient grounds to call Caps.
-
-- If Caps is called too late or too early (or not at all when it
-  should have been), that is referred to as Wrong Caps.  The team that
-  called late/early is penalised as described below. 
-
-- If a Wrong Caps is called, but the team that called it does win all
-  eight tricks, it is penalized two tokens.  It may not collect any
-  winnings for that game based on its bid.
-
-- If Caps is called at any point but the team calling Caps actually
-  loses a trick in that game, it is penalized five tokens and it may not
-  collect any winnings for that game based on its bid.
-
-- If at some point a team realises it should have called Caps earlier,
-  (and therefore is in Wrong Caps) it may not attempt to intentionally
-  lose a trick to hide its failing.  If this is spotted by the
-  opposing team, the Wrong Caps penalty will apply.
-
-- Even if it is not possible to call Caps before the first card in the
-  seventh trick is played, the above rules still apply.  However, the
-  extra token for calling and executing Caps correctly may not be
-  collected in this case.  Only the normal winnings for delivering on
-  the bid are paid out.
-
-Tactical Note: As can be seen, Caps is a way of balancing out a game
-that for some reason has become highly skewed in one team's favor.
-When facing a Caps situation, it serves the losing team to play in a
-'bad' and confusing manner, thus making it difficult for the winning
-team to call Caps at the right time.
-
-Conventional Note: A situation where the team opposing the trumper
-correctly executes Caps is referred to as External Caps.  In some
-versions of 304, execution of External Caps is awarded eight tokens
-including the winnings for the current game.  This is an older version
-of the game and not generally followed today.
-
-4.3.1 Partner Close Caps
-------------------------
-
-In the eight card bidding stage an additional bid is allowed which is
-referred to as Partner Close Caps.  This is the highest bid possible,
-and the first person to call it automatically becomes the trumper.  
-
-The trumper's partner does not take part in a Partner Close game.  The
-trumper always plays first in a Partner Close game, and play proceeds
-counter clockwise, skipping the trumper's partner.  No other player
-may look at the trumper's partner's cards until the game is over.  All
-the other rules for a 250+ bid game apply to a Partner Close game,
-with the following exceptions:
-- it is not necessary to call Caps in such a game.  To correctly
-deliver on the bid, it is sufficient to win all eight tricks. 
-- the Exhausted Trump Rule does not apply
-
-If Partner Close Caps is correctly executed, the payoff is four
-tokens, while the charge for not doing so is five tokens.
 
 
 4.4 Shuffling Rules
@@ -504,22 +291,6 @@ easily be nullified by intelligently cutting the deck before it is
 dealt. All the rules of shuffling apply to cutting as well.
 
 
-5.0 The rules of card304
-------------------------
-
-The electronic version of 304 is card304.  In the alpha version of
-card304, certain modes of play are not yet implemented and the rules
-have been accordingly modified.
-
-A summary of these modifications are:
-- Eight Card bidding is not allowed
-- Only one bid per player is allowed in the Four Card bidding stage
-- Open Trump games are not allowed
-- The exhausted trump rule is not followed (Sujee, this seems easy to implement..)
-- Caps cannot be called.  All games including Caps games are played
-  out like regular games.
-- Since the shuffling/dealing and cutting are done electronically and
-  in a fair manner, the rules regarding these are no longer
-  applicable.
-
+System rules for online game
+Every player gets 30 seonds per turn. if the tie runs out, a random valid card is played automatically by the system
 
