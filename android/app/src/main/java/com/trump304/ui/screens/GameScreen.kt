@@ -225,11 +225,15 @@ private fun TrumpSelectionView(
                 "clubs" to "\u2663",
                 "spades" to "\u2660",
             ).forEach { (suit, symbol) ->
-                FilterChip(
-                    selected = selectedSuit == suit,
-                    onClick = { onSuitSelected(suit) },
-                    label = { Text(symbol, style = MaterialTheme.typography.titleLarge) },
-                )
+                if (selectedSuit == suit) {
+                    Button(onClick = { onSuitSelected(suit) }) {
+                        Text(symbol, style = MaterialTheme.typography.titleLarge)
+                    }
+                } else {
+                    OutlinedButton(onClick = { onSuitSelected(suit) }) {
+                        Text(symbol, style = MaterialTheme.typography.titleLarge)
+                    }
+                }
             }
         }
 

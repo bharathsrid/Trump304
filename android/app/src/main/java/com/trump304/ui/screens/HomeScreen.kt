@@ -62,11 +62,15 @@ fun HomeScreen(
 
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             listOf(2, 3, 4).forEach { mode ->
-                FilterChip(
-                    selected = uiState.selectedMode == mode,
-                    onClick = { viewModel.onModeSelected(mode) },
-                    label = { Text("${mode}P") },
-                )
+                if (uiState.selectedMode == mode) {
+                    Button(onClick = { viewModel.onModeSelected(mode) }) {
+                        Text("${mode}P")
+                    }
+                } else {
+                    OutlinedButton(onClick = { viewModel.onModeSelected(mode) }) {
+                        Text("${mode}P")
+                    }
+                }
             }
         }
 
@@ -84,7 +88,7 @@ fun HomeScreen(
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        HorizontalDivider()
+        Divider()
 
         Spacer(modifier = Modifier.height(32.dp))
 

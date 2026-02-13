@@ -9,6 +9,8 @@ import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -29,7 +31,10 @@ class RestClient @Inject constructor() {
         return try {
             val response = client.post("$baseUrl/games") {
                 contentType(ContentType.Application.Json)
-                setBody(mapOf("mode" to mode, "player_name" to playerName))
+                setBody(buildJsonObject {
+                    put("mode", mode)
+                    put("player_name", playerName)
+                }.toString())
             }
             val body = json.decodeFromString<Map<String, kotlinx.serialization.json.JsonElement>>(
                 response.bodyAsText()
@@ -45,7 +50,9 @@ class RestClient @Inject constructor() {
         return try {
             val response = client.post("$baseUrl/games/${code.uppercase()}/join") {
                 contentType(ContentType.Application.Json)
-                setBody(mapOf("player_name" to playerName))
+                setBody(buildJsonObject {
+                    put("player_name", playerName)
+                }.toString())
             }
             val body = json.decodeFromString<Map<String, kotlinx.serialization.json.JsonElement>>(
                 response.bodyAsText()
